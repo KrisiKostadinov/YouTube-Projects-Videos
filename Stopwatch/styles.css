@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.stopwatch-container {
+    max-width: 800px;
+    padding: 6rem;
+    background-color: white;
+    border-radius: 10px;
+    animation: bg-anim 2000ms infinite;
+}
+
+@keyframes bg-anim {
+    0% {
+        box-shadow: 0 0 1px white;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 10px white;
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 1px white;
+        transform: scale(1);
+    }
+}
+
+.title {
+    font-size: 60px;
+    text-align: center;
+}
+
+.title span:first-child {
+    background-color: coral;
+    color: white;
+    padding: 0 20px;
+}
+
+.result {
+    font-size: 40px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+button {
+    padding: 20px 30px;
+    border: none;
+    background-color: coral;
+    color: white;
+    font-size: 30px;
+    transition: 200ms all ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: coral;
+}
