@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.navbar-container {
+    background-color: crimson;
+    transform: translateY(-90px);
+    animation: show-navbar 500ms forwards;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 90px;
+}
+
+i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-size: 22px;
+    transition: all 200ms ease-in-out;
+}
+
+a:hover {
+    background-color: #fff;
+    color: crimson;
+}
+
+a:hover i {
+    color: crimson;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-items {
+    display: flex;
+    opacity: 0;
+    animation: show-navbar-items 500ms forwards;
+    animation-delay: 500ms;
+}
+
+.nav-items li a {
+    border-radius: 5px;
+}
+
+.logo a {
+    font-size: 30px;
+    background-color: transparent;
+}
+
+.logo a:hover {
+    color: #fff;
+}
+
+.open-mobile-menu {
+    display: none;
+}
+
+.close-mobile-menu {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.navbar .mobile-nav-items {
+    display: none;
+    background-color: crimson;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    height: 100vh;
+    width: 240px;
+    padding-left: 20px;
+    padding-top: 90px;
+    box-shadow: 0 0 10px #0f0f0f22;
+    transform: translateX(240px);
+    transition: all 200ms ease-in-out;
+}
+
+.navbar .mobile-nav-items li a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navbar .mobile-nav-items.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+    .nav-items {
+        display: none;
+    }
+    .open-mobile-menu {
+        display: block;
+    }
+    .navbar {
+        padding: 0 20px;
+    }
+    .logo a {
+        padding: 0;
+    }
+    .navbar .mobile-nav-items {
+        display: block;
+    }
+}
+
+@keyframes show-navbar-items {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes show-navbar {
+    from {
+        transform: translateY(-90px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
